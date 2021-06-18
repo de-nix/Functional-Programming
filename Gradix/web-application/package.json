@@ -1,0 +1,26 @@
+{
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^6.0.0",
+    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.4",
+    "purescript": "^0.13.8",
+    "spago": "^0.15.3"
+  },
+  "scripts": {
+    "start": "parcel index.html --https --out-dir docs --open",
+    "build": "spago build",
+    "serve": "parcel build index.html --out-dir docs --public-url ./",
+    "build-prod": "mkdir -p prod && cp dev/index.html prod/ && rm -rf dist && spago bundle-app --to prod/index.js && parcel build prod/index.html"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material/menu": "^10.0.0",
+    "@material/textfield": "^10.0.0",
+    "@webcomponents/webcomponentsjs": "^2.5.0",
+    "DOM": "0.0.3",
+    "material-components-web": "^10.0.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}

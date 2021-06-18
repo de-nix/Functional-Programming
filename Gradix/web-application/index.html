@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+  
+  <title>Document</title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+  <script src="https://statics.teams.cdn.office.net/sdk/v1.6.0/js/MicrosoftTeams.min.js"></script>
+  <script>
+    microsoftTeams.initialize();
+    microsoftTeams.settings.registerOnSaveHandler(function (saveEvent) {
+
+                    microsoftTeams.settings.setSettings({
+                                        entityId: "example",
+                                        contentUrl: "https://de-nix.github.io/purescript-Halogen/",
+                                        suggestedDisplayName: "example",
+                                        websiteUrl: "https://de-nix.github.io/",
+                                        removeUrl: "https://de-nix.github.io/purescript-Halogen/"
+                                    });
+
+                    saveEvent.notifySuccess();
+                });
+     microsoftTeams.settings.setValidityState(true);
+    
+        </script>
+  
+  <script src="./node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+   
+	  <!-- Fonts to support Material Design -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <!-- Icons to support Material Design -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+   <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

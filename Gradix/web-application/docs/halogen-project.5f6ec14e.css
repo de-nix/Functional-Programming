@@ -1,0 +1,2 @@
+@use "@material/list/mdc-list";@use "@material/menu-surface/mdc-menu-surface";@use "@material/menu/mdc-menu";.my-small-button{min-width:125px}.my-button{min-width:175px}.inline,.space{margin:20px}.inline{display:inline-block}.list-item{margin:0;height:25%;font-size:12px}.my-card{position:relative;text-align:center;width:200px;height:120px;display:inline-block}.my-card-hover{text-align:center;padding:2px;position:absolute;z-index:1000;top:60%;bottom:0;right:5%;left:5%}
+/*# sourceMappingURL=halogen-project.5f6ec14e.css.map */

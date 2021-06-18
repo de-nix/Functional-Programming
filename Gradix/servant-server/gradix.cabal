@@ -1,0 +1,165 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 7d5c1e8f4d54a346243fe17806ad29effbd87d4c4d204b2f26ab30ceb49a6d46
+
+name:           gradix
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/gradix#readme>
+homepage:       https://github.com/githubuser/gradix#readme
+bug-reports:    https://github.com/githubuser/gradix/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/gradix
+
+library
+  exposed-modules:
+      JSON
+      Lib
+      ServantModule
+      SQL
+      Types
+  other-modules:
+      Paths_gradix
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson >=1.4
+    , aeson-lens
+    , array
+    , base >=4.7 && <5
+    , base-compat
+    , bytestring
+    , containers
+    , errors
+    , exceptions
+    , hspec
+    , hspec-wai
+    , http-client
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , lens
+    , monadIO
+    , mtl
+    , proxy
+    , resource-pool
+    , servant
+    , servant-client
+    , servant-quickcheck
+    , servant-server
+    , shelly
+    , sqlite-simple
+    , stm
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , wai
+    , wai-cors
+    , warp
+  default-language: Haskell2010
+
+executable gradix-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_gradix
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson >=1.4
+    , aeson-lens
+    , array
+    , base >=4.7 && <5
+    , base-compat
+    , bytestring
+    , containers
+    , errors
+    , exceptions
+    , gradix
+    , hspec
+    , hspec-wai
+    , http-client
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , lens
+    , monadIO
+    , mtl
+    , proxy
+    , resource-pool
+    , servant
+    , servant-client
+    , servant-quickcheck
+    , servant-server
+    , shelly
+    , sqlite-simple
+    , stm
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , wai
+    , wai-cors
+    , warp
+  default-language: Haskell2010
+
+test-suite gradix-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_gradix
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson >=1.4
+    , aeson-lens
+    , array
+    , base >=4.7 && <5
+    , base-compat
+    , bytestring
+    , containers
+    , errors
+    , exceptions
+    , gradix
+    , hspec
+    , hspec-wai
+    , http-client
+    , http-client-tls
+    , http-conduit
+    , http-types
+    , lens
+    , monadIO
+    , mtl
+    , proxy
+    , resource-pool
+    , servant
+    , servant-client
+    , servant-quickcheck
+    , servant-server
+    , shelly
+    , sqlite-simple
+    , stm
+    , text
+    , time
+    , transformers
+    , unordered-containers
+    , wai
+    , wai-cors
+    , warp
+  default-language: Haskell2010
