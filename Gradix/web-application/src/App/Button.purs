@@ -87,7 +87,7 @@ parentComponent  = H.mkComponent{
         input3 = {items : ["1","2","3","4","5","6","7","8","9","10","11","12","13","14"],selection: Just "1", buttonLabel : "format_list_numbered|Seminar"}
     handleParent ::forall o . ParentAction -> H.HalogenM ParentState ParentAction ParentSlots o Aff Unit
     handleParent = case _ of
-      InitializeParent -> pure upgradeElements
+      InitializeParent -> pure $ upgradeElements 4
       PluginHandle (Dropdown.SelectionChanged x y) -> H.modify_ _{plugin = maybe "" (\a->a) y}
       GroupHandle (Dropdown.SelectionChanged x y)  -> H.modify_ _ {_aGroup = maybe "" (\a-> a) y}
       SeminarHandle (Dropdown.SelectionChanged x y ) -> H.modify_ _{_aSeminar = maybe 0 (\a->maybe 0 (\b->b) (parseInt a(toRadix 10))) y }

@@ -67,7 +67,7 @@ component = S.component input $ S.defaultSpec
       H.modify_ _ { selection = selection, visibility = S.Off }
       H.raise $ SelectionChanged st.selection selection
     S.VisibilityChanged S.On -> do
-      pure upgradeElements
+      pure $ upgradeElements 4
     _ -> pure unit
 
   render ::S.State State -> S.ComponentHTML Action () Aff
@@ -106,4 +106,4 @@ component = S.component input $ S.defaultSpec
           , HH.span [class_ "mdc-list-item__text"][HH.text item ]
           ]
   handleAction ::Action -> S.HalogenM State Action () Message Aff Unit
-  handleAction Initialize = pure upgradeElements
+  handleAction Initialize = pure $ upgradeElements 4
