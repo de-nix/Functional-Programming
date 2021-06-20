@@ -73,25 +73,25 @@ component = S.component input $ S.defaultSpec
   render ::S.State State -> S.ComponentHTML Action () Aff
   render st =
     HH.div
-    [ classes_ ["inline","mdc-menu-surface__anchor"] ]
+    [ classes_ ["inline","mdc-menu-surface__anchor","parent"] ]
       [ renderToggle, renderContainer ]
     where
     renderToggle =
       HH.button
-        ( SS.setToggleProps [ classes_ ["mdc-button","mdc-button--raised"]] )
+        ( SS.setToggleProps [ classes_ ["mdc-button","mdc-button--raised","my-button"]] )
         [ HH.span [class_ "mdc-button__ripple"]
                   []
         , HH.i [classes_ ["material-icons","mdc-button__icon"], HA.hidden "true"]
-            [HH.text 
+            [HH.text
             $ fromMaybe "" $ head $ split (Pattern "|") st.buttonLabel
                          ]
-        , HH.span [class_ "mdc-button__label"] 
+        , HH.span [class_ "mdc-button__label"]
             [HH.text (fromMaybe (fromMaybe "" $ last $ split (Pattern "|") st.buttonLabel) st.selection)]
         ]
     renderContainer = whenElem (st.visibility == S.On) \_ ->
-      HH.div [classes_ ["mdc-menu", "mdc-menu-surface"]]
+      HH.div [classes_ ["mdc-menu", "mdc-menu-surface","mdc-menu-surface--fullwidth","child"]]
       [HH.ul
-        ( SS.setContainerProps [ class_ "mdc-list" ] )
+        ( SS.setContainerProps [ classes_ ["mdc-menu__selection-group", "my-list"]] )
         ( renderItem `mapWithIndex` st.items )
       ]
       where
@@ -99,7 +99,7 @@ component = S.component input $ S.defaultSpec
         HH.li
           ( SS.setItemProps index
               [ classes_
-                  [ "mdc-list-item" # guard (st.highlightedIndex == Just index)]
+                  [ "mdc-list-item","mdc-menu-item--selceted" # guard (st.highlightedIndex == Just index)]
               ]
           )
           [ HH.span[class_ "mdc-list-item__ripple"][]
